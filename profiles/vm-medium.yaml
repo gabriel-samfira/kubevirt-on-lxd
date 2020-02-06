@@ -1,0 +1,5 @@
+config:
+  limits.cpu: "2"
+  limits.memory: 4096MB
+description: A medium sized VM profile
+name: vm-medium

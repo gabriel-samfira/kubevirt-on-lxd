@@ -1,0 +1,9 @@
+config: {}
+description: "Small root disk"
+devices:
+  root:
+    path: /
+    pool: default
+    size: 10GB
+    type: disk
+name: vm-ds-small

@@ -1,0 +1,5 @@
+config:
+  limits.cpu: "4"
+  limits.memory: 8192MB
+description: A large VM profile
+name: vm-large

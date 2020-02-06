@@ -1,0 +1,9 @@
+config: {}
+description: "Medium root disk"
+devices:
+  root:
+    path: /
+    pool: default
+    size: 20GB
+    type: disk
+name: vm-ds-medium

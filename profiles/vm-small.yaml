@@ -1,0 +1,5 @@
+config:
+  limits.cpu: "2"
+  limits.memory: 2048MB
+description: A small VM profile
+name: vm-small
