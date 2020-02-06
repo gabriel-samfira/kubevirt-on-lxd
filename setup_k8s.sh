@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xe
+set -e
 
 POD_CIDR="10.244.0.0/16"
 ROLE="node"
