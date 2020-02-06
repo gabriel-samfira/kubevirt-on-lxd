@@ -17,7 +17,7 @@ parameters:
 # iscsiInterface: default
 
 # this must be on eof the volume groups condifgured in targed.yaml, the default is vg-targetd
-# volumeGroup: vg-targetd
+  volumeGroup: vg-targetd/pool
 
 # this is a comma separated list of initiators that will be give access to the created volumes, they must correspond to what you have configured in your nodes.
   initiators: ALLOWED_NODES
