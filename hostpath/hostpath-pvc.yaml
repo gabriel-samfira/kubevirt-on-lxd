@@ -1,9 +1,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: myclaim
+  name: hp-pv
 spec:
-  storageClassName: iscsi
+  storageClassName: csi-hostpath-sc
   accessModes:
     - ReadWriteOnce
   volumeMode: Block

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: hp-pvc-pod
+  name: hp-pv-pod
+spec:
+  containers:
+  - name: hp-pv-pod
+    image: robertxie/ubuntu-nettools
+    #securityContext:
+    #  privileged: true
+    command: ["sleep", "60000"]
+    volumeDevices:
+    - devicePath: /dev/block
+      name: hostpath-vol
+  volumes:
+  - name: hostpath-vol
+    persistentVolumeClaim:
+      claimName: hp-pv
