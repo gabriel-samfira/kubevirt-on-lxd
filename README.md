@@ -4,7 +4,7 @@ This is a quick and dirty script to set up a [kubevirt](https://github.com/kubev
 
   * k8s-master
   * k8s-node01
-  * k8s-iscsi
+  * k8s-iscsi (Optional)
 
 ## Prerequisites
 
@@ -18,10 +18,10 @@ I recommend you inspect the profiles in the ```profiles``` folder and assign res
 
 ## Deploy
 
-Simply run:
+To deploy Kubernetes with hostpath, without iSCSI, simply run:
 
 ```bash
-./deploy.sh --github-user YOUR_GITHUB_USERNAME
+./deploy.sh --github-user YOUR_GITHUB_USERNAME --with-hostpath 1
 ```
 
 The github username is used to fetch your public key from github and inject in the VMs that get spun up. Make sure you have at least one valid public key added to your github account.
@@ -31,10 +31,12 @@ Other options:
 ```bash
 ./deploy.sh flags
     
---github-user   The github username from which we fetch the public key
---lxd-br-name   LXD bridge name to use for VMs. Defaults to lxdbr0.
---admin-user    The admin user with full sudo access. Defaults to ubuntu.
---clobber       Use this option to overwrite any existing settings with those in this script.
+--github-user [YOUR_USERNAME]   The github username from which we fetch the public key
+--lxd-br-name [lxdbr0]          LXD bridge name to use for VMs. Defaults to lxdbr0.
+--admin-user [ubuntu]           The admin user with full sudo access. Defaults to ubuntu.
+--clobber                       Use this option to overwrite any existing settings with those in this script.
+--with-hostpath [1|0]           Install HostPath CSI. Node will use large disk profile.
+--with-iscsi    [1|0]           Install iSCSI external provisioner. Adds an extra VM.
 ```
 
 Good luck!
